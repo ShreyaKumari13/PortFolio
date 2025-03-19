@@ -1,23 +1,9 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { ParticleField } from './ParticleField';
 
 const Projects = () => {
     return (
         <section id="section-projects" className="relative min-h-screen bg-[#0a0a0a] py-20">
-            {/* Particle Canvas */}
-            <div className="absolute inset-0 pointer-events-none">
-                <Canvas
-                    camera={{ position: [0, 0, 8], fov: 50 }}
-                    dpr={[1, 2]}
-                >
-                    <color attach="background" args={['#0a0a0a']} />
-                    <Suspense fallback={null}>
-                        <ParticleField />
-                    </Suspense>
-                </Canvas>
-            </div>
-
             {/* Content */}
             <div className="container mx-auto px-4 relative z-10">
                 <h2 className="text-4xl font-bold text-white mb-12 text-center">Projects</h2>
@@ -46,4 +32,4 @@ const Projects = () => {
     )
 }
 
-export default Projects 
+export default Projects

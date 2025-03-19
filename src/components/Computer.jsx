@@ -14,7 +14,7 @@ export function Computer() {
     })
 
     return (
-        <group ref={computer} position={[0, 0, -2]} rotation={[0.2, 0, 0]} scale={1.8}>
+        <group ref={computer} position={[0, 0, 0]} rotation={[0.2, 0, 0]} scale={1.2}>
             {/* Base/Bottom part */}
             <mesh position={[0, -0.1, 0]} castShadow>
                 <boxGeometry args={[2, 0.1, 1.2]} />
