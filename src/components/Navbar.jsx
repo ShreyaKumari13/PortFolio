@@ -29,12 +29,16 @@ const Navbar = () => {
         <>
             {/* Desktop Navbar */}
             <div className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-sm">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto px-4 max-w-6xl">
                     <nav className="flex justify-between items-center h-16">
                         {/* Logo */}
                         <a href="#hero" className="text-2xl font-bold text-white relative group">
-                            <span className="relative z-10">SK</span>
-                            <span className="absolute -inset-1 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500"></span>
+                            <div className="relative inline-flex items-center">
+                                <span className="absolute transition-opacity duration-200 opacity-0 group-hover:opacity-100 -left-4">&lt; </span>
+                                <span className="relative z-10">&nbsp; SHREYA&nbsp;KUMARI &nbsp;</span>
+                                <span className="transition-opacity duration-200 opacity-0 group-hover:opacity-100 ml-1">/&gt;</span>
+                                <span className="absolute -inset-1 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500"></span>
+                            </div>
                         </a>
 
                         {/* Desktop Menu */}

@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/three": "^9.7.5",
     "@react-three/drei": "^9.92.7",
     "@react-three/fiber": "^8.15.12",
+    "gsap": "^3.12.7",
     "portfolio": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
