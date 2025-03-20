@@ -1,17 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+    const form = useRef();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: ''
     });
+    const [status, setStatus] = useState({
+        submitting: false,
+        submitted: false,
+        error: null
+    });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
+        setStatus({ submitting: true, submitted: false, error: null });
+
+        try {
+            await emailjs.sendForm(
+                'service_adj5u8a',
+                'template_gr27qc7',
+                form.current,
+                'u4XNQ_rzwT7wxmZcj'
+            );
+            
+            setFormData({ name: '', email: '', message: '' });
+            setStatus({
+                submitting: false,
+                submitted: true,
+                error: null
+            });
+
+            setTimeout(() => {
+                setStatus(prev => ({ ...prev, submitted: false }));
+            }, 5000);
+
+        } catch (error) {
+            console.error('Error:', error);
+            setStatus({
+                submitting: false,
+                submitted: false,
+                error: 'Failed to send message. Please try again.'
+            });
+        }
     };
 
     const handleChange = (e) => {
@@ -135,7 +170,7 @@ const Contact = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -187,13 +222,34 @@ const Contact = () => {
                                 ></textarea>
                             </motion.div>
 
+                            {status.submitted && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    className="text-green-400 text-sm"
+                                >
+                                    Message sent successfully!
+                                </motion.div>
+                            )}
+
+                            {status.error && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    className="text-red-400 text-sm"
+                                >
+                                    {status.error}
+                                </motion.div>
+                            )}
+
                             <motion.button
                                 type="submit"
-                                className="w-full bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity"
+                                className="w-full bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
+                                disabled={status.submitting}
                             >
-                                SEND MESSAGE
+                                {status.submitting ? 'SENDING...' : 'SEND MESSAGE'}
                             </motion.button>
                         </form>
                     </motion.div>
