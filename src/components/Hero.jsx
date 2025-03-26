@@ -182,7 +182,7 @@ const Hero = () => {
                                 >
                                     <span className="text-blue-400 font-bold">$</span> view_resume<br/>
                                     <motion.a 
-                                        href="/SHREYA_RESUME.pdf" 
+                                        href="/RESUME_SHREYA.pdf" 
                                         target="_blank" 
                                         rel="noopener noreferrer"
                                         className="text-gray-300 ml-4 hover:text-green-400 transition-colors cursor-pointer inline-block group"
