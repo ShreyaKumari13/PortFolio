@@ -9,56 +9,60 @@ const Experience = () => {
     const experiences = [
         {
             id: 1,
-            title: "Software Development Intern",
-            company: "Tech Innovators Inc.",
-            companyLink: "https://techinnovators.com",
-            location: "San Francisco, CA",
-            period: "June 2023 - August 2023",
+            title: "Java FullStack Intern",
+            company: "Government Tool Room & Training Center",
+            companyLink: "https://gttc.karnataka.gov.in/en",
+            location: "Hubli, Karnataka",
+            period: "Jun 2024 - Aug 2024",
             certificate: {
-                name: "React Development Excellence",
-                link: "https://cert.example.com/react-dev"
+                name: "Java Full Stack Web Development",
+                link: ""
             },
             description: [
-                "Developed and maintained web applications using React and Node.js",
-                "Implemented responsive designs and improved application performance by 40%",
-                "Collaborated with the team to integrate new features and fix bugs",
-                "Participated in code reviews and contributed to technical documentation"
+                "Built a full-stack web app using Java, Spring Boot, and React.js.",
+                "Developed REST APIs and managed databases.",
+                "Implemented user authentication with Spring Security.",
+                "Improved code efficiency through debugging and optimization."
             ],
-            skills: ["React", "Node.js", "JavaScript"],
+            skills: ["Core java", "SpringBoot", "React.js"],
             bgColor: "bg-blue-500/20",
-            textColor: "text-blue-400"
+            textColor: "text-red-400"
+            
+           
         },
         {
             id: 2,
-            title: "Web Development Intern",
-            company: "Digital Solutions Ltd.",
-            companyLink: "https://digitalsolutions.com",
-            location: "New York, NY",
-            period: "January 2023 - May 2023",
+            title: " Full Stack Web Development Intern",
+            company: "AiROBOSOFT Products and Services",
+            companyLink: "https://www.linkedin.com/company/airobosoft-products-and-services/?originalSubdomain=in",
+            location: "Hebbal, Bengaluru",
+            period: "Aug 2023 - Sep 2023",
             certificate: {
-                name: "Web Development Mastery",
-                link: "https://cert.example.com/web-dev"
+                name: "Full Stack Web Development",
+                link: "https://drive.google.com/file/d/1d3WQFYJKh4rXIoQNZMMMTgqetIGS_WQU/view"
             },
             description: [
-                "Built and deployed responsive websites for clients using modern web technologies",
-                "Optimized website performance and implemented SEO best practices",
-                "Created reusable components and maintained component library",
-                "Worked with REST APIs and implemented data visualization features"
+                "Developed and maintained full-stack web applications using React.js, JavaScript, and Firebase.",
+                "Designed and implemented responsive UI with optimized performance.",
+                "Integrated new features, resolved bugs, and enhanced user experience.",
+                "Contributed to code reviews and technical documentation for improved maintainability."
             ],
-            skills: ["Next.js", "TypeScript", "Tailwind CSS"],
-            bgColor: "bg-purple-500/20",
-            textColor: "text-purple-400"
+            skills: ["React.js", "HTML/CSS", "JavaScript","Firebase"],
+            bgColor: "bg-blue-500/20",
+            textColor: "text-blue-400"
+            
+           
         },
         {
             id: 3,
-            title: "Research Assistant",
-            company: "University Research Lab",
-            companyLink: "https://university.edu/lab",
-            location: "Boston, MA",
-            period: "September 2022 - December 2022",
+            title: "Machine Learning with Python Student Intern",
+            company: "COMPSOFT TECHNOLOGIES",
+            companyLink: "https://www.compstechnologies.com/",
+            location: "Rajajinagar, Bengaluru",
+            period: "May 2023 - Jun 2023",
             certificate: {
                 name: "ML Research Excellence",
-                link: "https://cert.example.com/ml-research"
+                link: "https://drive.google.com/file/d/1LZi65L-GmHS85fi624_dl2VquLDB5JX6/view"
             },
             description: [
                 "Conducted research on machine learning algorithms for computer vision",
@@ -69,6 +73,30 @@ const Experience = () => {
             skills: ["Python", "TensorFlow", "OpenCV"],
             bgColor: "bg-green-500/20",
             textColor: "text-green-400"
+            
+        },
+        {
+            id: 4,
+            title: " Java FullStack Developer Intern",
+            company: "TECHNOLOGICS GLOBAL PVT LTD",
+            companyLink: "https://technologics.in/",
+            location: "JP nagar, Bengaluru",
+            period: "Jan 2023 - May 2023",
+            certificate: {
+                name: "Java FullStack",
+                link: "https://drive.google.com/file/d/1BwVOpTkaKUCEWiz-mM20DeICvUT7ihYC/view"
+            },
+            description: [
+                "Developed and maintained full-stack web applications using Core Java, JDBC, Hibernate, Spring MVC, JSP, and Servlets.",
+                "Built and optimized backend services for efficient data processing and performance.",
+                "Designed and integrated dynamic web pages to enhance user interaction.",
+                "Collaborated with the team to implement new features, debug issues, and improve system functionality."
+            ],
+            skills: ["Core Java"," Jdbc", "Hibernate", "Spring MVC", "Jsp", "Servlets"],
+            bgColor: "bg-purple-500/20",
+            textColor: "text-purple-400"
+            
+            
         }
     ];
 

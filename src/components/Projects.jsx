@@ -7,28 +7,52 @@ const Projects = () => {
 
     const projects = [
         {
-            title: "Portfolio Website",
-            description: "A modern portfolio website built with React and Three.js, featuring 3D animations and interactive elements.",
+            title: "Aconews",
+            description: "Ackonews is a news aggregation web application that fetches the latest articles using the gnews.io API. The app allows users to search for news based on keywords, country, language, and category.",
             image: "/aconews.png",
-            technologies: ["React", "Three.js", "TailwindCSS"],
-            liveDemo: "https://your-live-demo-link.com",
-            github: "https://github.com/your-username/project1"
+            technologies: ["React", "HTML5", "TailwindCSS", "Vite", "Express", "Firebase", "Vercel", "Git&Github" ],
+            liveDemo: "https://newsapp-587c0.web.app/",
+            github: "https://github.com/ShreyaKumari13/NewsApp"
         },
         {
-            title: "E-Commerce Platform",
-            description: "A full-stack e-commerce solution with user authentication, payment processing, and order management.",
-            image: "/project2.jpg",
-            technologies: ["Node.js", "MongoDB", "Express"],
-            liveDemo: "https://your-live-demo-link.com",
-            github: "https://github.com/your-username/project2"
+            title: "Gttc Lms",
+            description: "A comprehensive Learning Management System (LMS) developed for GTTC administrators. Features include course creation and management, subject organization, video content management, subscriber analytics with detailed insights on free and paid users, and an interactive revenue dashboard with printable reports. Currently in active development with continuous feature enhancements.\n\nDemo Access:\nEmail: admin@example.com\nPassword: admin123",
+            image: "/lms.png",
+            technologies: ["HTML","CSS","JavaScript","Python","Django", "Git&Github"],
+            liveDemo: "https://lmsgttc.netlify.app/",
+            github: "https://github.com/ShreyaKumari13/GTTC_LMS_Admin_Side"
         },
         {
-            title: "AI Chat Application",
-            description: "Real-time chat application with AI-powered responses, user authentication, and message history.",
-            image: "/project3.jpg",
-            technologies: ["Python", "Flask", "Socket.io"],
-            liveDemo: "https://your-live-demo-link.com",
-            github: "https://github.com/your-username/project3"
+            title: "ProjectX",
+            description: "ProjectX is a client management system developed using Python and the Django framework, designed to simplify and enhance the management of client relationships. It offers a secure platform for storing and managing client data, tracking communications, and handling client-related tasks.",
+            image: "/X.png",
+            technologies: ["HTML","CSS","JavaScript","Python", "Django", "Git&Github"],
+            // liveDemo: "https://your-live-demo-link.com",
+            github: "https://github.com/ShreyaKumari13/ProjectX_Django"
+        },
+        {
+            title: "Heart-Care",
+            description: "This is a web application which uses multiple ML models, Python(Flask and NLTK) in the backend for predicting heart attack percentage of a person, Front-End is designed through HTML/CSS & JS, also integrated a chatbot for seamless user experience which replies with common diseases treatment recommendations.",
+            image: "/Picture1.png",
+            technologies: ["HTML5", "CSS", "JavaScript", "Python", "Flask", "Git&Github"],
+            // liveDemo: "https://your-live-demo-link.com",
+            github: "https://github.com/ShreyaKumari13/CardioDetect"
+        },
+        {
+            title: "Movie Booking System",
+            description: "Developed a Movie Booking App with React.js and Spring Boot, featuring user authentication, movie browsing, and real-time seat availability for a seamless booking experience.",
+            image: "/movie.png",
+            technologies: ["HTML5", "CSS", "JavaScript", "Java","MySql", "Git&Github"],
+            // liveDemo: "https://your-live-demo-link.com",
+            github: "https://github.com/ShreyaKumari13/Movie_Booking_System"
+        },
+        {
+            title: "Money App",
+            description: "Developed a secure currency converter using Next.js and PostgreSQL, featuring user/admin roles, real-time exchange rates, authentication, and a dynamic draw system for enhanced functionality.",
+            image: "/moneyapp.png",
+            technologies: ["Next.js","PostgreSQL", "Git&Github"],
+            liveDemo: "https://rabbit-money-app.vercel.app/",
+            github: "https://github.com/ShreyaKumari13/MoneyApp"
         }
     ];
 
@@ -59,13 +83,13 @@ const Projects = () => {
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
-                            className="group relative"
+                            className="group relative h-full"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
                         >
-                            <div className="relative overflow-hidden rounded-xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50">
+                            <div className="relative h-full overflow-hidden rounded-xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 flex flex-col">
                                 <div className="relative h-64 overflow-hidden cursor-pointer" onClick={() => setSelectedImage(project.image)}>
                                     {!loadedImages[index] && (
                                         <div className="absolute inset-0 bg-gray-800 animate-pulse flex items-center justify-center">
@@ -110,13 +134,18 @@ const Projects = () => {
                                     </motion.div>
                                 </div>
 
-                                <div className="relative z-20 p-6 -mt-20">
+                                <div className="relative z-20 p-6 -mt-20 flex flex-col flex-grow">
                                     <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors">
                                         {project.title}
                                     </h3>
-                                    <p className="text-gray-300 mb-4 line-clamp-2">
+                                    <motion.p 
+                                        className="text-gray-300 mb-4 overflow-hidden flex-grow"
+                                        initial={{ height: "3em" }}
+                                        whileHover={{ height: "auto" }}
+                                        transition={{ duration: 0.3 }}
+                                    >
                                         {project.description}
-                                    </p>
+                                    </motion.p>
                                     
                                     <div className="flex flex-wrap gap-2 mb-6">
                                         {project.technologies.map((tech, techIndex) => (
