@@ -57,17 +57,17 @@ const Contact = () => {
     };
 
     return (
-        <section id="section-contact" className="relative min-h-screen bg-[#0a0a0a] py-20">
-            <div className="container mx-auto px-4 relative z-10">
+        <section id="section-contact" className="relative min-h-screen bg-[#0a0a0a] py-12 sm:py-16 md:py-20">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div 
-                    className="text-center mb-16"
+                    className="text-center mb-8 sm:mb-12 md:mb-16"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
                     <motion.h2 
-                        className="text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 mb-6"
+                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 mb-4 sm:mb-6"
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300 }}
                     >
@@ -78,7 +78,7 @@ const Contact = () => {
                         whileHover={{ width: "150px" }}
                         transition={{ duration: 0.3 }}
                     />
-                    <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+                    <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
                         Ready to discuss your next project or explore opportunities
                     </p>
                 </motion.div>
@@ -92,7 +92,7 @@ const Contact = () => {
                         transition={{ duration: 0.6 }}
                     >
                         <motion.p 
-                            className="text-gray-300 text-center mb-12 text-lg"
+                            className="text-gray-300 text-center mb-8 sm:mb-12 text-base sm:text-lg"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 0.2 }}
@@ -111,10 +111,10 @@ const Contact = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5 }}
                             >
-                                <FaEnvelope className="w-8 h-8 text-green-400 group-hover:rotate-12 transition-transform duration-300" />
+                                <FaEnvelope className="w-6 h-6 sm:w-8 sm:h-8 text-green-400 group-hover:rotate-12 transition-transform duration-300" />
                                 <div>
-                                    <h3 className="text-white font-semibold mb-1">Email</h3>
-                                    <p className="text-gray-400 group-hover:text-green-400 transition-colors">shreyakumari2713@gmail.com</p>
+                                    <h3 className="text-white font-semibold mb-1 text-sm sm:text-base">Email</h3>
+                                    <p className="text-gray-400 group-hover:text-green-400 transition-colors text-xs sm:text-sm">shreyakumari2713@gmail.com</p>
                                 </div>
                             </motion.a>
 
@@ -126,9 +126,9 @@ const Contact = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.1 }}
                             >
-                                <FaMapMarkerAlt className="w-8 h-8 text-green-400 group-hover:rotate-12 transition-transform duration-300" />
+                                <FaMapMarkerAlt className="w-6 h-6 sm:w-8 sm:h-8 text-green-400 group-hover:rotate-12 transition-transform duration-300" />
                                 <div>
-                                    <h3 className="text-white font-semibold mb-1">Location</h3>
+                                    <h3 className="text-white font-semibold mb-1 text-sm sm:text-base">Location</h3>
                                     <p className="text-gray-400">Karnataka, India</p>
                                 </div>
                             </motion.div>
@@ -148,7 +148,7 @@ const Contact = () => {
                                 className="bg-gray-700/30 p-4 rounded-lg hover:bg-gray-700/50 transition-all duration-300 group"
                                 whileHover={{ scale: 1.1, y: -5 }}
                             >
-                                <FaGithub className="w-8 h-8 text-white group-hover:text-green-400 transition-colors" />
+                                <FaGithub className="w-6 h-6 sm:w-8 sm:h-8 text-white group-hover:text-green-400 transition-colors" />
                             </motion.a>
 
                             <motion.a
@@ -158,7 +158,7 @@ const Contact = () => {
                                 className="bg-gray-700/30 p-4 rounded-lg hover:bg-gray-700/50 transition-all duration-300 group"
                                 whileHover={{ scale: 1.1, y: -5 }}
                             >
-                                <FaLinkedin className="w-8 h-8 text-white group-hover:text-green-400 transition-colors" />
+                                <FaLinkedin className="w-6 h-6 sm:w-8 sm:h-8 text-white group-hover:text-green-400 transition-colors" />
                             </motion.a>
                         </motion.div>
                     </motion.div>
@@ -176,13 +176,13 @@ const Contact = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 }}
                             >
-                                <label className="text-gray-300 mb-2 block">Your name</label>
+                                <label className="text-gray-300 mb-2 block text-sm sm:text-base">Your name</label>
                                 <input
                                     type="text"
                                     name="name"
                                     value={formData.name}
                                     onChange={handleChange}
-                                    className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-green-400 transition-colors"
+                                    className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-green-400 transition-colors"
                                     placeholder="Enter your name"
                                     required
                                 />
@@ -193,13 +193,13 @@ const Contact = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
                             >
-                                <label className="text-gray-300 mb-2 block">Your email address</label>
+                                <label className="text-gray-300 mb-2 block text-sm sm:text-base">Your email address</label>
                                 <input
                                     type="email"
                                     name="email"
                                     value={formData.email}
                                     onChange={handleChange}
-                                    className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-green-400 transition-colors"
+                                    className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-green-400 transition-colors"
                                     placeholder="Enter your email"
                                     required
                                 />
@@ -210,7 +210,7 @@ const Contact = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.3 }}
                             >
-                                <label className="text-gray-300 mb-2 block">Your message</label>
+                                <label className="text-gray-300 mb-2 block text-sm sm:text-base">Your message</label>
                                 <textarea
                                     name="message"
                                     value={formData.message}

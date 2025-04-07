@@ -101,33 +101,33 @@ const Experience = () => {
     ];
 
     return (
-        <section id="section-experience" className="relative min-h-screen bg-[#0a0a0a] py-20">
-            <div className="container mx-auto px-4 relative z-10">
+        <section id="section-experience" className="relative min-h-screen bg-[#0a0a0a] py-12 sm:py-16 md:py-20">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div 
-                    className="text-center mb-16"
+                    className="text-center mb-8 sm:mb-12 md:mb-16"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
                     <motion.h2 
-                        className="text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 mb-6"
+                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 mb-4 sm:mb-6"
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300 }}
                     >
                         Experience
                     </motion.h2>
                     <motion.div 
-                        className="w-24 h-1 bg-gradient-to-r from-green-400 to-blue-500 mx-auto mb-8"
+                        className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-green-400 to-blue-500 mx-auto mb-4 sm:mb-6 md:mb-8"
                         whileHover={{ width: "150px" }}
                         transition={{ duration: 0.3 }}
                     />
-                    <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto px-4">
                         My professional journey and achievements
                     </p>
                 </motion.div>
 
-                <div className="max-w-4xl mx-auto space-y-8">
+                <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 md:space-y-8">
                     {experiences.map((exp, index) => (
                         <motion.div
                             key={exp.id}
@@ -135,7 +135,7 @@ const Experience = () => {
                             onClick={() => setSelectedId(selectedId === exp.id ? null : exp.id)}
                             onHoverStart={() => setIsHovered(exp.id)}
                             onHoverEnd={() => setIsHovered(null)}
-                            className={`bg-gray-800/50 rounded-lg p-8 hover:bg-gray-800/70 transition-all duration-300 border border-gray-700/50 backdrop-blur-sm cursor-pointer ${
+                            className={`bg-gray-800/50 rounded-lg p-4 sm:p-6 md:p-8 hover:bg-gray-800/70 transition-all duration-300 border border-gray-700/50 backdrop-blur-sm cursor-pointer ${
                                 isHovered === exp.id ? 'shadow-lg shadow-blue-500/20' : ''
                             }`}
                             initial={{ opacity: 0, x: -20 }}
@@ -145,9 +145,9 @@ const Experience = () => {
                             whileHover={{ scale: 1.02 }}
                         >
                             <motion.div className="flex flex-col md:flex-row justify-between mb-4">
-                                <div className="space-y-2">
+                                <div className="space-y-2 mb-4 md:mb-0">
                                     <motion.h3 
-                                        className="text-2xl font-bold text-white transition-colors"
+                                        className="text-xl sm:text-2xl md:text-2xl font-bold text-white transition-colors"
                                         style={{
                                             color: isHovered === exp.id ? '#4ADE80' : '#FFFFFF'
                                         }}
@@ -155,12 +155,12 @@ const Experience = () => {
                                         {exp.title}
                                     </motion.h3>
                                     
-                                    <div className="flex items-center gap-4 flex-wrap">
+                                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 flex-wrap">
                                         <motion.a
                                             href={exp.companyLink}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-xl text-gray-300 hover:text-green-400 transition-colors flex items-center gap-2"
+                                            className="text-base sm:text-lg md:text-xl text-gray-300 hover:text-green-400 transition-colors flex items-center gap-2"
                                             whileHover={{ scale: 1.05 }}
                                             onClick={(e) => e.stopPropagation()}
                                         >
@@ -168,35 +168,37 @@ const Experience = () => {
                                         </motion.a>
 
                                         <motion.div 
-                                            className="flex items-center text-gray-400 gap-1"
+                                            className="flex items-center text-sm sm:text-base text-gray-400 gap-1"
                                             whileHover={{ scale: 1.05 }}
                                         >
-                                            <FaMapMarkerAlt className="w-4 h-4" />
+                                            <FaMapMarkerAlt className="w-3 h-3 sm:w-4 sm:h-4" />
                                             {exp.location}
                                         </motion.div>
                                     </div>
                                 </div>
                                 
-                                <div className="flex flex-col items-end gap-2">
+                                <div className="flex flex-row sm:flex-col items-start sm:items-end gap-4 sm:gap-2">
                                     <motion.span 
-                                        className="text-green-400 font-semibold"
+                                        className="text-sm sm:text-base text-green-400 font-semibold"
                                         animate={{
                                             opacity: isHovered === exp.id ? 1 : 0.8
                                         }}
                                     >
                                         {exp.period}
                                     </motion.span>
-                                    <motion.a
-                                        href={exp.certificate.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={(e) => e.stopPropagation()}
-                                        className="text-sm text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 group"
-                                        whileHover={{ scale: 1.05 }}
-                                    >
-                                        <FaAward className="w-3.5 h-3.5 text-yellow-400 group-hover:rotate-12 transition-transform duration-300" />
-                                        View Certificate
-                                    </motion.a>
+                                    {exp.certificate.link && (
+                                        <motion.a
+                                            href={exp.certificate.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={(e) => e.stopPropagation()}
+                                            className="text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 group"
+                                            whileHover={{ scale: 1.05 }}
+                                        >
+                                            <FaAward className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-400 group-hover:rotate-12 transition-transform duration-300" />
+                                            View Certificate
+                                        </motion.a>
+                                    )}
                                 </div>
                             </motion.div>
                             
@@ -208,7 +210,7 @@ const Experience = () => {
                                         exit={{ opacity: 0, height: 0 }}
                                         className="space-y-4"
                                     >
-                                        <motion.ul className="list-disc list-inside text-gray-400 space-y-3 mb-6">
+                                        <motion.ul className="list-disc list-inside text-sm sm:text-base text-gray-400 space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                                             {exp.description.map((item, i) => (
                                                 <motion.li
                                                     key={i}
@@ -225,7 +227,7 @@ const Experience = () => {
                             </AnimatePresence>
 
                             <motion.div 
-                                className="flex flex-wrap gap-3 mt-4"
+                                className="flex flex-wrap gap-2 sm:gap-3 mt-4"
                                 animate={{
                                     y: selectedId === exp.id ? 10 : 0
                                 }}
@@ -233,7 +235,7 @@ const Experience = () => {
                                 {exp.skills.map((skill, i) => (
                                     <motion.span
                                         key={i}
-                                        className={`px-4 py-2 ${exp.bgColor} ${exp.textColor} rounded-full text-sm font-medium`}
+                                        className={`px-2 sm:px-4 py-1 sm:py-2 ${exp.bgColor} ${exp.textColor} rounded-full text-xs sm:text-sm font-medium`}
                                         whileHover={{ scale: 1.1 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
