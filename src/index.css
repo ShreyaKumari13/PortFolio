@@ -155,3 +155,25 @@ h2 {
   background-color: rgba(74, 222, 128, 0.1);
   border-color: #4ade80;
 }
+
+.text-shadow-lg {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+              0 0 10px rgba(74, 222, 128, 0.3);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}

@@ -25,8 +25,8 @@ const Hero = () => {
                     backgroundSize: '50px 50px'
                 }}
             />
-            <div className="container mx-auto px-2 sm:px-4 py-8 sm:py-12 relative z-10">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+            <div className="container mx-auto px-2 sm:px-4 py-8 sm:py-12 relative z-10 flex flex-col">                
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 mb-12">
                     <motion.div 
                         className="w-full md:w-3/5 space-y-4 sm:space-y-6 md:space-y-8 text-center md:text-left"
                         initial={{ opacity: 0, x: -50 }}
@@ -144,6 +144,114 @@ const Hero = () => {
                         />
                     </motion.div>
                 </div>
+                <motion.div 
+                    className="w-full overflow-hidden bg-gray-800/40 backdrop-blur-lg py-6 sm:py-12 border-t border-b border-gray-600/40 shadow-[0_0_20px_rgba(74,222,128,0.2)]"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                >
+                    <div className="relative flex overflow-x-hidden">
+                        <div className="flex items-center whitespace-nowrap animate-scroll">
+                            {[
+                                "Java",
+                                "SpringBoot",
+                                "SQL",
+                                ".Net",
+                                "C#",
+                                "React",
+                                "Node.js",
+                                "MongoDB",
+                                "Express",
+                                "Firebase",
+                                "Python",
+                                "Django",
+                                "Flask",
+                                "HTML5",
+                                "CSS3",
+                                "JavaScript",
+                                "Git",
+                                "GitHub",
+                            ].concat([
+                                "Java",
+                                "SpringBoot",
+                                "SQL",
+                                ".Net",
+                                "C#",
+                                "React",
+                                "Node.js",
+                                "MongoDB",
+                                "Express",
+                                "Firebase",
+                                "Python",
+                                "Django",
+                                "Flask",
+                                "HTML5",
+                                "CSS3",
+                                "JavaScript",
+                                "Git",
+                                "GitHub",
+                            ]).map((tech, index, array) => (
+                                <motion.div
+                                    key={`${tech}-${index}`}
+                                    className="group flex flex-col items-center relative mx-4 sm:mx-8"
+                                    whileHover={{ scale: 1.2, y: -5 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                >
+                                    <span className="text-gray-200 text-lg sm:text-2xl font-medium group-hover:text-green-400 transition-all duration-300 relative text-shadow-lg">
+                                        {tech}
+                                        <motion.span 
+                                            className="absolute bottom-0 left-0 w-full h-0.5 bg-green-400 origin-left shadow-[0_0_10px_rgba(74,222,128,0.5)]"
+                                            initial={{ scaleX: 0 }}
+                                            whileHover={{ scaleX: 1 }}
+                                            transition={{ duration: 0.3 }}
+                                        />
+                                    </span>
+                                    <span className="absolute -right-4 sm:-right-8 top-1/2 -translate-y-1/2 text-green-400/60 text-xl sm:text-3xl">•</span>
+                                </motion.div>
+                            ))}
+                        </div>
+                        <div className="animate-[marquee_25s_linear_infinite] flex items-center whitespace-nowrap" aria-hidden="true">
+                            {[
+                                "Java",
+                                "SpringBoot",
+                                "SQL",
+                                ".Net",
+                                "C#",
+                                "React",
+                                "Node.js",
+                                "MongoDB",
+                                "Express",
+                                "Firebase",
+                                "Python",
+                                "Django",
+                                "Flask",
+                                "HTML5",
+                                "CSS3",
+                                "JavaScript",
+                                "Git",
+                                "GitHub",
+                            ].map((tech, index, array) => (
+                                <motion.div
+                                    key={`${tech}-${index}-duplicate`}
+                                    className="group flex flex-col items-center relative mx-4 sm:mx-8"
+                                    whileHover={{ scale: 1.2, y: -5 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                >
+                                    <span className="text-gray-200 text-lg sm:text-2xl font-medium group-hover:text-green-400 transition-all duration-300 relative text-shadow-lg">
+                                        {tech}
+                                        <motion.span 
+                                            className="absolute bottom-0 left-0 w-full h-0.5 bg-green-400 origin-left shadow-[0_0_10px_rgba(74,222,128,0.5)]"
+                                            initial={{ scaleX: 0 }}
+                                            whileHover={{ scaleX: 1 }}
+                                            transition={{ duration: 0.3 }}
+                                        />
+                                    </span>
+                                    <span className="absolute -right-4 sm:-right-8 top-1/2 -translate-y-1/2 text-green-400/60 text-xl sm:text-3xl">•</span>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );
