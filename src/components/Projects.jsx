@@ -47,12 +47,36 @@ const Projects = () => {
             github: "https://github.com/ShreyaKumari13/Movie_Booking_System"
         },
         {
-            title: "Money App",
-            description: "Developed a secure currency converter using Next.js and PostgreSQL, featuring user/admin roles, real-time exchange rates, authentication, and a dynamic draw system for enhanced functionality.",
-            image: "/moneyapp.png",
-            technologies: ["Next.js","PostgreSQL", "Git&Github"],
-            liveDemo: "https://rabbit-money-app.vercel.app/",
-            github: "https://github.com/ShreyaKumari13/MoneyApp"
+            title: "Chatbot Flow Builder",
+            description: "A modern, extensible chatbot flow builder built using React and React Flow. It enables users to visually create conversational flows by dragging message nodes and connecting them via edges in a canvas interface.",
+            image: "/chatflow.png",
+            technologies: ["React 18","React Flow","Vite","JavaScript (ES6+)","HTML5","CSS3","Git&Github"],
+            liveDemo: "https://chatbot-flow-builder-lac.vercel.app/",
+            github: "https://github.com/ShreyaKumari13/chatbot-flow-builder"
+        },
+        {
+            title: "Github Webhook Dashboard",
+            description: "A comprehensive GitHub webhook monitoring system implementing real-time event tracking with a two-repository architecture. This project demonstrates professional-grade development skills with Flask, PostgreSQL, and modern web technologies.",
+            image: "/githubwebhook.png",
+            technologies: ["Python","Flask","PostgreSQL","Node.js","Express.js","HTML5","CSS3","JavaScript","Render","Git&Github"],
+            liveDemo: "https://github-webhook-dashboard.onrender.com/",
+            github: "https://github.com/ShreyaKumari13/Github-Webhook-Dashboard"
+        },
+        {
+            title: "Book Review API",
+            description: "A full-featured Book Review application built with Next.js, PostgreSQL, and TypeScript. This application allows users to register, login, add books, write reviews, and search for books.",
+            image: "/bookreviewapi.png",
+            technologies: ["Next.js","TypeScript","PostgreSQL","JWT","Node.js","React","HTML5","CSS3","JavaScript","Git&Github"],
+            liveDemo: "https://book-review-phi-ochre.vercel.app/",
+            github: "https://github.com/ShreyaKumari13/Book-Review"
+        },
+        {
+            title: "Tic Tac Toe",
+            description: "Tic Tac Toe is a simple two-player game where the goal is to get three of your marks in a row on a 3x3 grid. It’s quick, fun, and perfect for testing your strategy skills.",
+            image: "/tictactoe.png",
+            technologies: ["HTML5","CSS3","JavaScript","Netlify","Git&Github"],
+            liveDemo: "https://tictactoetic.netlify.app/",
+            github: "https://github.com/ShreyaKumari13/Tic_Tac_Toe"
         }
     ];
 
