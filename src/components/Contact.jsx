@@ -1,10 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-    const form = useRef();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -16,37 +14,37 @@ const Contact = () => {
         error: null
     });
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        setStatus({ submitting: true, submitted: false, error: null });
 
-        try {
-            await emailjs.sendForm(
-                'service_adj5u8a',
-                'template_gr27qc7',
-                form.current,
-                'u4XNQ_rzwT7wxmZcj'
-            );
-            
-            setFormData({ name: '', email: '', message: '' });
-            setStatus({
-                submitting: false,
-                submitted: true,
-                error: null
-            });
+        // Create mailto link with form data (No EmailJS needed!)
+        const subject = encodeURIComponent(`Portfolio Contact: Message from ${formData.name}`);
+        const body = encodeURIComponent(
+            `Name: ${formData.name}\n` +
+            `Email: ${formData.email}\n\n` +
+            `Message:\n${formData.message}\n\n` +
+            `---\nSent from your portfolio contact form`
+        );
 
-            setTimeout(() => {
-                setStatus(prev => ({ ...prev, submitted: false }));
-            }, 5000);
+        const mailtoLink = `mailto:shreyakumari2713@gmail.com?subject=${subject}&body=${body}`;
 
-        } catch (error) {
-            console.error('Error:', error);
-            setStatus({
-                submitting: false,
-                submitted: false,
-                error: 'Failed to send message. Please try again.'
-            });
-        }
+        // Open user's email client
+        window.location.href = mailtoLink;
+
+        // Show success message
+        setStatus({
+            submitting: false,
+            submitted: true,
+            error: null
+        });
+
+        // Clear form
+        setFormData({ name: '', email: '', message: '' });
+
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+            setStatus(prev => ({ ...prev, submitted: false }));
+        }, 5000);
     };
 
     const handleChange = (e) => {
@@ -170,7 +168,7 @@ const Contact = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+                        <form onSubmit={handleSubmit} className="space-y-6">
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}

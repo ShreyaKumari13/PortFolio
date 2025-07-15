@@ -9,6 +9,23 @@ const Experience = () => {
     const experiences = [
         {
             id: 1,
+            title: "Full Stack Developer",
+            company: "HazeDawn Limited",
+            companyLink: "https://www.hazedawn.com/",
+            location: "Hong Kong",
+            period: "Nov 2024 - Present",
+            description: [
+                "Developing and maintaining full-stack web applications.",
+                "Working with modern web technologies and frameworks.",
+                "Collaborating with international teams on various projects.",
+                "Implementing scalable solutions for business requirements."
+            ],
+            skills: ["React.js", "Node.js", "JavaScript", "Full Stack Development"],
+            bgColor: "bg-green-500/20",
+            textColor: "text-green-400"
+        },
+        {
+            id: 2,
             title: "Java FullStack Intern",
             company: "Government Tool Room & Training Center",
             companyLink: "https://gttc.karnataka.gov.in/en",
@@ -27,11 +44,9 @@ const Experience = () => {
             skills: ["Core java", "SpringBoot", "React.js"],
             bgColor: "bg-blue-500/20",
             textColor: "text-red-400"
-            
-           
         },
         {
-            id: 2,
+            id: 3,
             title: " Full Stack Web Development Intern",
             company: "AiROBOSOFT Products and Services",
             companyLink: "https://www.linkedin.com/company/airobosoft-products-and-services/?originalSubdomain=in",
@@ -54,7 +69,7 @@ const Experience = () => {
            
         },
         {
-            id: 3,
+            id: 4,
             title: "Machine Learning with Python Student Intern",
             company: "COMPSOFT TECHNOLOGIES",
             companyLink: "https://www.compstechnologies.com/",
@@ -76,7 +91,7 @@ const Experience = () => {
             
         },
         {
-            id: 4,
+            id: 5,
             title: " Java FullStack Developer Intern",
             company: "TECHNOLOGICS GLOBAL PVT LTD",
             companyLink: "https://technologics.in/",
@@ -186,7 +201,7 @@ const Experience = () => {
                                     >
                                         {exp.period}
                                     </motion.span>
-                                    {exp.certificate.link && (
+                                    {exp.certificate && exp.certificate.link && (
                                         <motion.a
                                             href={exp.certificate.link}
                                             target="_blank"
